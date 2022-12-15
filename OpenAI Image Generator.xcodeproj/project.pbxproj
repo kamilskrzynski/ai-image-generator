@@ -11,6 +11,8 @@
 		37A45B67294B63EC008989AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A45B66294B63EC008989AD /* ContentView.swift */; };
 		37A45B69294B63ED008989AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A45B68294B63ED008989AD /* Assets.xcassets */; };
 		37A45B6C294B63ED008989AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A45B6B294B63ED008989AD /* Preview Assets.xcassets */; };
+		37A45B74294B646D008989AD /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37A45B73294B646D008989AD /* OpenAIKit */; };
+		37A45B78294B65C9008989AD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A45B77294B65C9008989AD /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		37A45B66294B63EC008989AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37A45B68294B63ED008989AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A45B6B294B63ED008989AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37A45B77294B65C9008989AD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A45B74294B646D008989AD /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,7 @@
 				37A45B66294B63EC008989AD /* ContentView.swift */,
 				37A45B68294B63ED008989AD /* Assets.xcassets */,
 				37A45B6A294B63ED008989AD /* Preview Content */,
+				37A45B77294B65C9008989AD /* ViewModel.swift */,
 			);
 			path = "OpenAI Image Generator";
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = "OpenAI Image Generator";
+			packageProductDependencies = (
+				37A45B73294B646D008989AD /* OpenAIKit */,
+			);
 			productName = "OpenAI Image Generator";
 			productReference = 37A45B61294B63EC008989AD /* OpenAI Image Generator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 37A45B58294B63EC008989AD;
+			packageReferences = (
+				37A45B72294B646D008989AD /* XCRemoteSwiftPackageReference "OpenAIKit" */,
+			);
 			productRefGroup = 37A45B62294B63EC008989AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A45B67294B63EC008989AD /* ContentView.swift in Sources */,
+				37A45B78294B65C9008989AD /* ViewModel.swift in Sources */,
 				37A45B65294B63EC008989AD /* OpenAI_Image_GeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +351,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		37A45B72294B646D008989AD /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37A45B73294B646D008989AD /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37A45B72294B646D008989AD /* XCRemoteSwiftPackageReference "OpenAIKit" */;
+			productName = OpenAIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37A45B59294B63EC008989AD /* Project object */;
 }

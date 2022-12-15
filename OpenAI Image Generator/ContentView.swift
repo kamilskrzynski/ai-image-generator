@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = ViewModel()
+    @State var prompt: String = ""
+    @State var generatedImage: UIImage?
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Spacer()
+            if let generatedImage = generatedImage {
+                Image(uiImage: generatedImage)
+                    .resizable()
+                    .frame(width: 250, height: 250)
+            } else {
+                Text("You need to provide prompt to generate an image")
+            }
+            Spacer()
+            TextField("Type prompt here...", text: $prompt)
+            Button("Generate") {
+                Task {
+                    generatedImage =  await viewModel.generateImage(from: prompt)
+                }
+            }
+            .onAppear {
+                viewModel.setup()
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
